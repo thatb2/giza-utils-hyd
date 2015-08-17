@@ -8,7 +8,6 @@ set -x
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $DIR/utils.sh
-source $DIR/../lib/android-utils.sh
 
 APP_ID_PREFIX="com.pega"
 
@@ -79,7 +78,8 @@ rm -f *.apk
 wget --quiet -O prpcMobileHC.apk $APP_URL
 
 adb kill-server
-reconnect
+#reconnect
+adb start-server
 sleep 2
 remove_apps_from_device $APP_ID_PREFIX 'Applications removed BEFORE test'
 
