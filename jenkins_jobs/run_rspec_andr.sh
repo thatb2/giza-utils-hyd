@@ -8,6 +8,7 @@ set -x
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $DIR/utils.sh
+source $DIR/../lib/android-utils.sh
 
 APP_ID_PREFIX="com.pega"
 
