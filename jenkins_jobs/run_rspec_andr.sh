@@ -71,20 +71,20 @@ check_server_connection
 set_up_credentials UIDG PWDG $PROPERTIES_FILE_PATH
 set_up_global_properties PROPERTIES
 
+# commenting the following code since it is not required for every test case.
+#echo 'Downloading latest stable app'
+#rm -f *.apk
 
-echo 'Downloading latest stable app'
-rm -f *.apk
+#wget --quiet -O prpcMobileHC.apk $APP_URL
 
-wget --quiet -O prpcMobileHC.apk $APP_URL
-
-adb kill-server
+#adb kill-server
 #reconnect
-adb start-server
-sleep 2
-remove_apps_from_device $APP_ID_PREFIX 'Applications removed BEFORE test'
+#adb start-server
+#sleep 2
+#remove_apps_from_device $APP_ID_PREFIX 'Applications removed BEFORE test'
 
-echo 'Installing app on device'
-adb install -r *.apk
+#echo 'Installing app on device'
+#adb install -r *.apk
 
 start_appium
 cd "$GIZA_HOME"
