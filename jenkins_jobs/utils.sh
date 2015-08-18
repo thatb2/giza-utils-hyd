@@ -110,9 +110,8 @@ function get_properties_file_path() {
 }
 
 function run_bundle_install() {
-  sudo -u thatb2 Pega@1236
-  bundle update rspec_html_formatter > $JENKINS_WORKSPACE/logs/bundle_update.log
-  bundle install > $JENKINS_WORKSPACE/logs/bundle_install.log
+  sudo bundle update rspec_html_formatter > $JENKINS_WORKSPACE/logs/bundle_update.log
+  sudo bundle install > $JENKINS_WORKSPACE/logs/bundle_install.log
 }
 
 function start_appium() {
