@@ -87,21 +87,22 @@ set_up_global_properties PROPERTIES
 #adb install -r *.apk
 
 start_appium
-#cd "$GIZA_HOME"
-PATH_TO_GEMFILE=$(dirname "$BUNDLE_GEMFILE")
-echo 'path to gem file:$PATH_TO_GEMFILE'
-check_not_empty PATH_TO_GEMFILE
-check_dir_exists $PATH_TO_GEMFILE
-normalize PATH_TO_GEMFILE
-cd "$PATH_TO_GEMFILE"
-run_bundle_install
+cd "$GIZA_HOME"
+#PATH_TO_GEMFILE=$(dirname "$BUNDLE_GEMFILE")
+#echo 'path to gem file:$PATH_TO_GEMFILE'
+#check_not_empty PATH_TO_GEMFILE
+#check_dir_exists $PATH_TO_GEMFILE
+#normalize PATH_TO_GEMFILE
+#cd "$PATH_TO_GEMFILE"
+#run_bundle_install
 #cd\
 #cd "$GIZA_HOME"
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb logcat -c
 
 trap cleanup_on_exit EXIT
-bundle exec rspec  -f RspecHtmlFormatter $RSPEC_FILE_PATH -c -b -f JUnit -o ${JENKINS_WORKSPACE}/reports/report.xml -fd
+#bundle exec 
+rspec  -f RspecHtmlFormatter $RSPEC_FILE_PATH -c -b -f JUnit -o ${JENKINS_WORKSPACE}/reports/report.xml -fd
 adb logcat -v time -d > $JENKINS_WORKSPACE/logs/logcat.log
 echo 'Tests finished SUCCESSFULLY'
 move_html_reports
