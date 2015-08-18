@@ -88,6 +88,8 @@ set_up_global_properties PROPERTIES
 
 start_appium
 cd "$GIZA_HOME"
+PATH_TO_GEMFILE=$(dirname $RSPEC_FILE_PATH)
+cd "$PATH_TO_GEMFILE"
 run_bundle_install
 
 echo "Start testing of '$RSPEC_FILE_PATH'"
