@@ -105,4 +105,4 @@ bundle exec rspec  -f RspecHtmlFormatter $RSPEC_FILE_PATH -c -b -f JUnit -o ${JE
 adb logcat -v time -d > $JENKINS_WORKSPACE/logs/logcat.log
 echo 'Tests finished SUCCESSFULLY'
 move_html_reports
-remove_apps_from_device $APP_ID_PREFIX 'Applications removed AFTER test'
+#remove_apps_from_device $APP_ID_PREFIX 'Applications removed AFTER test'
