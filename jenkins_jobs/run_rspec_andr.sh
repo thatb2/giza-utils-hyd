@@ -88,10 +88,8 @@ set_up_global_properties PROPERTIES
 
 start_appium
 cd "$GIZA_HOME"
-PATH_TO_GEMFILE=$(dirname "BUNDLE_GEMFILE")
-echo 'path to gem file:......'
-echo "${PATH_TO_GEMFILE}"
-echo '......................'
+PATH_TO_GEMFILE=$(dirname "$BUNDLE_GEMFILE")
+echo 'path to gem file:$PATH_TO_GEMFILE'
 cd "$PATH_TO_GEMFILE"
 run_bundle_install
 cd "$GIZA_HOME"
