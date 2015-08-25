@@ -40,8 +40,8 @@ check_not_empty JENKINS_WORKSPACE
 check_dir_exists $JENKINS_WORKSPACE
 normalize JENKINS_WORKSPACE
 
-PROPERTIES_FILE_PATH=$(get_properties_file_path $RSPEC_FILE_PATH)
-check_file_exists $PROPERTIES_FILE_PATH
+#PROPERTIES_FILE_PATH=$(get_properties_file_path $RSPEC_FILE_PATH)
+#check_file_exists $PROPERTIES_FILE_PATH
 
 check_working_dir
 clean_reports
@@ -68,7 +68,7 @@ trap cleanup_on_exit EXIT
 stub_html_reports
 check_server_connection
 
-set_up_credentials UIDG PWDG $PROPERTIES_FILE_PATH
+#set_up_credentials UIDG PWDG $PROPERTIES_FILE_PATH
 set_up_global_properties PROPERTIES
 
 # commenting the following code since it is not required for every test case.
