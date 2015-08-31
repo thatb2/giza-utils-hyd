@@ -8,7 +8,7 @@ set -x
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $DIR/utils.sh
-source $DIR/../lib/android-utils.sh
+#source $DIR/../lib/android-utils.sh
 
 APP_ID_PREFIX="com.pega"
 
@@ -65,6 +65,17 @@ function local_cleanup() {
 }
 
 trap cleanup_on_exit EXIT
+
+declare -r _reconnect_="$(resolve reconnect)"
+
+function reconnect() {
+    if [[ -n "${_reconnect_}" ]]; then
+        debug "${_reconnect_} $@" 
+        ${_reconnect_} "$@"
+    else
+        error "reconnect not available; ignoring reconnect $@"
+    fi
+}
 
 stub_html_reports
 check_server_connection
