@@ -1,6 +1,6 @@
 #!/bin/bash
 
-info "Loaded android utilities"
+#info "Loaded android utilities"
 
 [[ -n "${ANDROID_HOME}" ]] && \
     PATH="${ANDROID_HOME}/platform-tools:${ANDROID_HOME}/tools:${PATH}"
