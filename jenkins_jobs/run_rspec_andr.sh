@@ -95,6 +95,7 @@ echo 'path to gem file:$PATH_TO_GEMFILE'
 check_not_empty PATH_TO_GEMFILE
 check_dir_exists $PATH_TO_GEMFILE
 normalize PATH_TO_GEMFILE
+cd\
 cd "$PATH_TO_GEMFILE"
 run_bundle_install
 cd\
