@@ -90,15 +90,15 @@ set_up_global_properties PROPERTIES
 
 start_appium
 cd "$GIZA_HOME"
-#PATH_TO_GEMFILE=$(dirname "$BUNDLE_GEMFILE")
-#echo 'path to gem file:$PATH_TO_GEMFILE'
-#check_not_empty PATH_TO_GEMFILE
-#check_dir_exists $PATH_TO_GEMFILE
-#normalize PATH_TO_GEMFILE
-#cd "$PATH_TO_GEMFILE"
-#run_bundle_install
-#cd\
-#cd "$GIZA_HOME"
+PATH_TO_GEMFILE=$(dirname "$BUNDLE_GEMFILE")
+echo 'path to gem file:$PATH_TO_GEMFILE'
+check_not_empty PATH_TO_GEMFILE
+check_dir_exists $PATH_TO_GEMFILE
+normalize PATH_TO_GEMFILE
+cd "$PATH_TO_GEMFILE"
+run_bundle_install
+cd\
+cd "$GIZA_HOME"
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb logcat -c
 
