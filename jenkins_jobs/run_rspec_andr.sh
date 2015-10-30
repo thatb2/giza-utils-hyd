@@ -96,7 +96,8 @@ check_not_empty PATH_TO_GEMFILE
 #check_dir_exists $PATH_TO_GEMFILE
 #normalize PATH_TO_GEMFILE
 cd
-cd "$PATH_TO_GEMFILE"
+#cd "$PATH_TO_GEMFILE"
+cd "/Users/Shared/giza/mobile/features/Offline/DataSync"
 run_bundle_install
 cd
 cd "$GIZA_HOME"
