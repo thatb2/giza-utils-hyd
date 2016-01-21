@@ -78,11 +78,11 @@ set_up_global_properties PROPERTIES
 
 #wget --quiet -O prpcMobileHC.apk $APP_URL
 
-#adb kill-server
-#reconnect
-#adb start-server
-adb usb
-#sleep 10
+adb kill-server
+reconnect
+adb start-server
+#adb usb
+sleep 5
 #remove_apps_from_device $APP_ID_PREFIX 'Applications removed BEFORE test'
 
 #echo 'Installing app on device'
