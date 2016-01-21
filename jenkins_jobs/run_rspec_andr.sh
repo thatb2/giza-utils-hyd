@@ -8,7 +8,6 @@ set -x
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $DIR/utils.sh
-#source $DIR/../lib/android-utils.sh
 
 APP_ID_PREFIX="com.pega"
 
@@ -89,19 +88,12 @@ sleep 5
 
 start_appium
 cd "$GIZA_HOME"
-#PATH_TO_GEMFILE=$(dirname "$BUNDLE_GEMFILE")
-#echo 'path to gem file:$PATH_TO_GEMFILE'
-#check_not_empty PATH_TO_GEMFILE
-#check_dir_exists $PATH_TO_GEMFILE
-#normalize PATH_TO_GEMFILE
-#cd
-#cd "$PATH_TO_GEMFILE"
-#cd "/Users/Shared/giza/mobile/features/Offline/DataSync"
 echo "Bundle Install"
 run_bundle_install
-#cd
-#cd "$GIZA_HOME"
+
 echo "Start testing of '$RSPEC_FILE_PATH'"
+adb devices
+sleep 2
 adb logcat -c
 
 trap cleanup_on_exit EXIT
