@@ -80,7 +80,6 @@ set_up_global_properties PROPERTIES
 
 adb kill-server
 sleep 2
-adb usb
 adb start-server
 sleep 5
 #remove_apps_from_device $APP_ID_PREFIX 'Applications removed BEFORE test'
