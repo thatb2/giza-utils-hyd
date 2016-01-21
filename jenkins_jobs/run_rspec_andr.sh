@@ -81,7 +81,7 @@ set_up_global_properties PROPERTIES
 #adb kill-server
 #reconnect
 #adb start-server
-#adb usb
+adb usb
 #sleep 10
 #remove_apps_from_device $APP_ID_PREFIX 'Applications removed BEFORE test'
 
@@ -98,7 +98,7 @@ cd "$GIZA_HOME"
 #cd
 #cd "$PATH_TO_GEMFILE"
 #cd "/Users/Shared/giza/mobile/features/Offline/DataSync"
-echo "bundle bhargav"
+echo "Bundle Install"
 run_bundle_install
 #cd
 #cd "$GIZA_HOME"
