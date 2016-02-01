@@ -88,8 +88,8 @@ sleep 10
 
 start_appium
 #cd "$GIZA_HOME"
-#echo "Bundle Install"
-#run_bundle_install
+echo "Bundle Install"
+run_bundle_install
 
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb devices
