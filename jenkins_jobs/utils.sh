@@ -119,7 +119,7 @@ function start_appium() {
   echo 'Starting appium'
   #/usr/bin/xvfb-run appium --session-override -p 4444 > $JENKINS_WORKSPACE/logs/appium.log 2>&1 &
   appium --session-override -p 4444 > $JENKINS_WORKSPACE/logs/appium.log 2>&1 &
-  sleep 20
+  sleep 30
 }
 
 function start_appium_ios() {
