@@ -117,9 +117,20 @@ function run_bundle_install() {
 
 function start_appium() {
   echo 'Starting appium'
-  #/usr/bin/xvfb-run appium --session-override -p 4444 > $JENKINS_WORKSPACE/logs/appium.log 2>&1 &
   appium --session-override -p 4444 > $JENKINS_WORKSPACE/logs/appium.log 2>&1 &
-  sleep 30
+  sleep 5
+
+  echo "Testing appium connectivity"
+  count=0
+  until curl --silent "http://127.0.0.1:4444/wd/hub/status" ; do
+      sleep 2
+      let "count+=1"
+      echo "Waiting for Appium ..."
+      if [ ${count} -eq 30 ]; then
+          return 1
+      fi
+  done
+  return 0
 }
 
 function start_appium_ios() {
