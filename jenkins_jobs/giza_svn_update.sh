@@ -12,5 +12,5 @@ normalize GIZA_HOME
 
 cd $GIZA_HOME
 #svn revert -R .
-svn update -r HEAD --non-interactive --no-auth-cache --username readonly --password readonly --accept tf
+#svn update -r HEAD --non-interactive --no-auth-cache --username readonly --password readonly --accept tf
 #svn checkout -r HEAD --non-interactive --no-auth-cache --username readonly --password readonly --accept tf
