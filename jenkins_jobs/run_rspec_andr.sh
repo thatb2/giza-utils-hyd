@@ -87,7 +87,6 @@ sleep 10
 #adb install -r *.apk
 
 start_appium
-cd
 cd "$GIZA_HOME"
 echo "Bundle Install"
 #run_bundle_install
