@@ -89,8 +89,7 @@ sleep 10
 start_appium
 pwd
 sleep 2
-cd "/Users/Shared"
-cd "giza"
+cd_to_giza_home
 #cd "$GIZA_HOME"
 echo "Bundle Install"
 run_bundle_install
