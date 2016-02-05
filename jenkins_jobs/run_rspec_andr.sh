@@ -102,7 +102,8 @@ adb devices
 sleep 2
 function start_adb() {
   count=0
-  until adb devices | grep -v "List" ; do
+  command='adb devices | grep -v "List"'
+  until !${command} ; do
       let "count+=1"
       echo "Waiting for adb to start ..."
       if [ ${count} -eq 5 ]; then
