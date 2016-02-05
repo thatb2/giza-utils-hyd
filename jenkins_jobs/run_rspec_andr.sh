@@ -100,7 +100,6 @@ run_bundle_install
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb devices
 sleep 2
-start_adb
 function start_adb() {
   count = 0;
   until 'adb devices | grep -v "List" | awk '{print $1}'' ; do
@@ -113,7 +112,7 @@ function start_adb() {
       sleep 5
   done
 }
-
+start_adb
 
 adb logcat -c
 
