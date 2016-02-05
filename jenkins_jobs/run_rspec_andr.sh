@@ -112,9 +112,22 @@ function start_adb() {
       sleep 20
   fi
 }
-start_adb
+function start_adb2() {
+  count=0
+  until adb logcat -c | grep -v 'waiting for device' ; do
+      let "count+=1"
+      echo "Waiting for adb to start ..."
+      if [ ${count} -eq 5 ]; then
+          return 1
+      fi
+      adb kill-server
+      sleep 20
+  done
+}
 
-adb logcat -c
+start_adb2
+
+#adb logcat -c
 
 trap cleanup_on_exit EXIT
 bundle exec rspec  -f RspecHtmlFormatter $RSPEC_FILE_PATH -c -b -f JUnit -o ${JENKINS_WORKSPACE}/reports/report.xml -fd
