@@ -102,10 +102,12 @@ adb devices | grep -v 'List'
 adb devices | grep -v 'List' > abc.txt
 _file="abc.txt"
 sleep 2
-
+echo "file data"
+tr -d "\r\n" < "$_file"|wc -c
+echo "end file data"
 function start_adb() {
   count=0
-  if [  -s "$_file" ] ;  then
+  until [  (tr -d "\r\n" < "$_file"|wc -c) -eq 0 ] ;  do
       let "count+=1"
       echo "Waiting for adb to start ..."
       if [ ${count} -eq 5 ]; then
@@ -115,7 +117,7 @@ function start_adb() {
       sleep 20
       adb devices | grep -v 'List' > abc.txt
       sleep 2
-  fi
+  done
 }
 
 start_adb
