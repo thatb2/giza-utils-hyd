@@ -104,7 +104,7 @@ sleep 2
 
 function start_adb() {
   count=0
-  until -s abc.txt  do
+  if -s abc.txt ;  then
       let "count+=1"
       echo "Waiting for adb to start ..."
       if [ ${count} -eq 5 ]; then
@@ -114,7 +114,7 @@ function start_adb() {
       sleep 20
       adb devices | grep -v 'List' > abc.txt
       sleep 2
-  done
+  fi
 }
 
 start_adb
