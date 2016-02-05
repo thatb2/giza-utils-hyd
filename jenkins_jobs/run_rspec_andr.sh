@@ -101,7 +101,7 @@ echo "Start testing of '$RSPEC_FILE_PATH'"
 adb devices
 sleep 2
 function start_adb() {
-  count = 0;
+  count = 0
   until 'adb devices | grep -v "List" | awk '{print $1}'' ; do
       let "count+=1"
       echo "Waiting for adb to start ..."
