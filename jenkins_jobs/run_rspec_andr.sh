@@ -99,12 +99,12 @@ run_bundle_install
 
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb devices | grep -v 'List'
-adb devices | grep -v 'List' > abc.txt
+#adb devices | grep -v 'List' > abc.txt
 sleep 2
 
 function start_adb() {
   count=0
-  if -s abc.txt ;  then
+  if [ ![ adb devices | grep -v 'List'] ] ;  then
       let "count+=1"
       echo "Waiting for adb to start ..."
       if [ ${count} -eq 5 ]; then
