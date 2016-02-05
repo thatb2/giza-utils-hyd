@@ -107,7 +107,7 @@ tr -d "\r\n" < "$_file"|wc -c
 echo "end file data"
 function start_adb() {
   count=0
-  until [  (tr -d "\r\n" < "$_file"|wc -c) -eq 0 ] ;  do
+  until [  $(tr -d "\r\n" < "$_file"|wc -c) -eq 0 ] ;  do
       let "count+=1"
       echo "Waiting for adb to start ..."
       if [ ${count} -eq 5 ]; then
