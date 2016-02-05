@@ -100,7 +100,7 @@ run_bundle_install
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb devices | grep -v 'List'
 adb devices | grep -v 'List' > abc.txt
-_file = "abc.txt"
+_file="abc.txt"
 sleep 2
 
 function start_adb() {
