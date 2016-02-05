@@ -98,12 +98,13 @@ echo "Bundle Install"
 run_bundle_install
 
 echo "Start testing of '$RSPEC_FILE_PATH'"
+adb devices | grep -v 'List'
 adb devices | grep -v 'List' > abc.txt
 sleep 2
 
 function start_adb() {
   count=0
-  until [-s abc.txt] ; do
+  until -s abc.txt  do
       let "count+=1"
       echo "Waiting for adb to start ..."
       if [ ${count} -eq 5 ]; then
@@ -111,18 +112,8 @@ function start_adb() {
       fi
       adb kill-server
       sleep 20
-  done
-}
-function start_adb2() {
-  count=0
-  until adb logcat -c | grep -v 'waiting for device' ; do
-      let "count+=1"
-      echo "Waiting for adb to start ..."
-      if [ ${count} -eq 5 ]; then
-          return 1
-      fi
-      adb kill-server
-      sleep 20
+      adb devices | grep -v 'List' > abc.txt
+      sleep 2
   done
 }
 
