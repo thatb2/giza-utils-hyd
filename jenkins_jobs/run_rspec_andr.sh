@@ -100,6 +100,20 @@ run_bundle_install
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb devices
 sleep 2
+count = 0;
+function start_adb() {
+  until 'adb devices | grep -v "List" | awk '{print $1}'' ; do
+      let "count+=1"
+      echo "Waiting for adb to start ..."
+      if [ ${count} -eq 5 ]; then
+          return 1
+      fi
+      adb kill-server
+      sleep 5
+  done
+}
+
+
 adb logcat -c
 
 trap cleanup_on_exit EXIT
