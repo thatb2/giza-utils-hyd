@@ -109,7 +109,7 @@ function start_adb() {
           return 1
       fi
       adb kill-server
-      sleep 5
+      sleep 20
   fi
 }
 start_adb
