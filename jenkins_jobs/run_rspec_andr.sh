@@ -102,9 +102,6 @@ adb devices | grep -v 'List'
 adb devices | grep -v 'List' > abc.txt
 _file="abc.txt"
 sleep 2
-echo "file data"
-tr -d "\r\n" < "$_file"|wc -c
-echo "end file data"
 function start_adb() {
   count=0
   while [  $(tr -d "\r\n" < "$_file"|wc -c) -eq 0 ] ;  do
@@ -119,11 +116,9 @@ function start_adb() {
       sleep 2
   done
 }
-
 start_adb
-
+rm -rf $GIZA_HOME/abc.txt
 adb logcat -c
-
 trap cleanup_on_exit EXIT
 bundle exec rspec  -f RspecHtmlFormatter $RSPEC_FILE_PATH -c -b -f JUnit -o ${JENKINS_WORKSPACE}/reports/report.xml -fd
 adb logcat -v time -d > $JENKINS_WORKSPACE/logs/logcat.log
