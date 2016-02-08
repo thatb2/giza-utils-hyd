@@ -1,10 +1,10 @@
 #!/bin/bash
 # To be executed from Jenkins execut shell section like:
 # source ./jenkins_jobs/run_rspec_andr.sh GIZA_HOME BUNDLE_GEMFILE RSPEC_FILE_PATH APP_URL UIDG PWDG PROPERTIES WORKSPACE
-#set +x
+set +x
 source ~/.rvm/scripts/rvm
-#set -x
-#set -e
+set -x
+
 
 
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
@@ -90,7 +90,9 @@ sleep 10
 start_appium
 pwd
 sleep 2
+set +e
 cd_to_giza_home
+set -e
 #set +x
 #source ~/.rvm/scripts/rvm
 #set -x
