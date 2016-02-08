@@ -152,10 +152,6 @@ function kill_dirty_processes() {
   fi
 }
 
-function cd_to_giza_home(){
-  cd $GIZA_HOME
-}
-
 function cleanup_on_exit() {
   if type -t local_cleanup ; then
     local_cleanup
