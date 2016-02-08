@@ -5,8 +5,6 @@ set +x
 source ~/.rvm/scripts/rvm
 set -x
 
-
-
 DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
 source $DIR/utils.sh
 
@@ -91,12 +89,8 @@ start_appium
 pwd
 sleep 2
 set +e
-cd_to_giza_home
+cd "$GIZA_HOME"
 set -e
-#set +x
-#source ~/.rvm/scripts/rvm
-#set -x
-#cd "$GIZA_HOME"
 echo "Bundle Install"
 run_bundle_install
 
