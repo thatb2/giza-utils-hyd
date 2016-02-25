@@ -114,7 +114,7 @@ function start_adb() {
   done
 }
 start_adb
-rm -rf $GIZA_HOME/abc.txt
+#rm -rf $GIZA_HOME/abc.txt
 adb logcat -c
 trap cleanup_on_exit EXIT
 bundle exec rspec  -f RspecHtmlFormatter $RSPEC_FILE_PATH -c -b -f JUnit -o ${JENKINS_WORKSPACE}/reports/report.xml -fd
