@@ -104,11 +104,11 @@ function start_adb() {
   while [  $(tr -d "\r\n" < "$_file"|wc -c) -eq 0 ] ;  do
       let "count+=1"
       echo "Waiting for adb to start ..."
-      if [ ${count} -eq 5 ]; then
+      if [ ${count} -eq 10 ]; then
           return 1
       fi
       adb kill-server
-      sleep 20
+      sleep 30
       adb devices | grep -v 'List' > abc.txt
       sleep 2
   done
