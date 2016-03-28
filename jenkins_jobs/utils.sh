@@ -111,7 +111,7 @@ function get_properties_file_path() {
 
 function run_bundle_install() {
   echo "In run_bundle_install API"
-  bundle update rspec_html_formatter > $JENKINS_WORKSPACE/logs/bundle_update.log
+  #bundle update rspec_html_formatter > $JENKINS_WORKSPACE/logs/bundle_update.log
   bundle install > $JENKINS_WORKSPACE/logs/bundle_install.log
 }
 
