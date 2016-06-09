@@ -44,7 +44,7 @@ check_file_exists $PROPERTIES_FILE_PATH
 
 check_working_dir
 clean_reports
-kill_dirty_processes
+#kill_dirty_processes
 setup_begin
 
 function stub_html_reports() {
