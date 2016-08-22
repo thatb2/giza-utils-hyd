@@ -101,7 +101,7 @@ _file="abc.txt"
 sleep 2
 function start_adb() {
   count=0
-  while [  $(tr -d "\r\n" < "$_file"|wc -c) -eq 0 ] ;  do
+  while [  $(tr -d "\r\n" < "$_file"|wc -c) -eq 0 || $(tr -d "\r\n" < "$_file"|wc -c) -eq 83 ] ;  do
       let "count+=1"
       echo "Waiting for adb to start ..."
       if [ ${count} -eq 10 ]; then
