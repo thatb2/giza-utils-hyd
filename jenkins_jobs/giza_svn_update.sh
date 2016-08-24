@@ -12,6 +12,8 @@ normalize GIZA_HOME
 
 cd $GIZA_HOME
 git checkout master
+git clean -fd
+git checkout .
 git pull
 #svn revert -R .
 #svn update -r HEAD --non-interactive --no-auth-cache --username readonly --password readonly --accept tf
