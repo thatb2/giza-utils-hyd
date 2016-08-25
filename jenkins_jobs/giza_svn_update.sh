@@ -16,7 +16,7 @@ git clean -fd
 git checkout .
 git gc --prune
 git status
-git pull
+git pull origin master
 #svn revert -R .
 #svn update -r HEAD --non-interactive --no-auth-cache --username readonly --password readonly --accept tf
 #svn checkout -r HEAD --non-interactive --no-auth-cache --username readonly --password readonly --accept tf
