@@ -11,7 +11,7 @@ check_dir_exists $GIZA_HOME
 normalize GIZA_HOME
 
 cd $GIZA_HOME
-git checkout team/automaton/mfsbugs
+git checkout master
 git clean -fd
 #git checkout .
 #git gc --prune
