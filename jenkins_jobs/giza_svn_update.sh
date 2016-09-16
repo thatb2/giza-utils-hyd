@@ -13,7 +13,7 @@ normalize GIZA_HOME
 cd $GIZA_HOME
 git checkout master
 git clean -fd
-git checkout 0f63228a44b
+#git checkout 0f63228a44b
 #git gc --prune
 #git status
 git pull origin master
