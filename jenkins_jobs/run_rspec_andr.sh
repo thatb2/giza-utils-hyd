@@ -92,8 +92,7 @@ set +e
 cd "$GIZA_HOME"
 set -e
 echo "Bundle Install"
-#run_bundle_install
-# commenting above line for installing gems as there is no gem file in the location giza/mobile/features/Offline/DataSync/Gemfile
+run_bundle_install
 echo "Start testing of '$RSPEC_FILE_PATH'"
 adb devices | grep -v 'List'
 adb devices | grep -v 'List' > abc.txt
