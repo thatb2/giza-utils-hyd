@@ -126,7 +126,7 @@ function start_appium() {
       sleep 2
       let "count+=1"
       echo "Waiting for Appium ..."
-      if [ ${count} -eq 30 ]; then
+      if [ ${count} -eq 50 ]; then
           return 1
       fi
   done
