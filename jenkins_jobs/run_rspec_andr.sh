@@ -117,7 +117,7 @@ start_adb
 rm -rf $GIZA_HOME/abc.txt
 adb logcat -c
 trap cleanup_on_exit EXIT
-bundle exec rspec  -f RspecHtmlFormatter $RSPEC_FILE_PATH -c -b -f JUnit -o ${JENKINS_WORKSPACE}/reports/report.xml -fd
+bundle exec rspec $RSPEC_FILE_PATH -c -b -f JUnit -o ${JENKINS_WORKSPACE}/reports/report.xml -fd
 adb logcat -v time -d > $JENKINS_WORKSPACE/logs/logcat.log
 echo 'Tests finished SUCCESSFULLY'
 move_html_reports
